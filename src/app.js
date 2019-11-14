@@ -5,7 +5,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
 const notesRouter = require('./notes/notes-router')
-const folderRouter = require('./folders/folders-router')
+const foldersRouter = require('./folders/folders-router')
 
 const app = express()
 const jsonParser = express.json()
@@ -20,7 +20,7 @@ app.use(cors())
 
 app.use('/api/notes', notesRouter)
 
-app.use('/api/folders', folderRouter)
+app.use('/api/folders', foldersRouter)
 
 app.get('/', (req, res) => {
     res.send('Hello, boilerplate!')
